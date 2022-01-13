@@ -1,12 +1,12 @@
-#Rotina para criar códigos para o request builder para várias empresas em vários trimestres
-#Adaptado por: Felipe Simplício Ferreira
-#última atualização: 20/09/2020
+#Rotina para criar cÃ³digos para o request builder para vÃ¡rias empresas em vÃ¡rios trimestres
+#Adaptado por: Marcelo Vilas Boas de Castro
+#Ãºltima atualizaÃ§Ã£o: 20/09/2020
 
-#Definindo diretórios a serem utilizados
+#Definindo diretÃ³rios a serem utilizados
 getwd()
-setwd("C:/Users/User/OneDrive/Códigos a serem testados")
+setwd("C:/Users/User/OneDrive/CÃ³digos a serem testados")
 
-#Definindo período de tempo
+#Definindo perÃ­odo de tempo
 ano_inicial = 1994 #Mudar de acordo com a necessidade
 ano_final = 2019
 anos = ano_inicial:ano_final
@@ -16,7 +16,7 @@ trimestres = c("Q1","Q2","Q3","Q4")
 arquivo_entrada = read.csv2("empresas.csv")
 empresas = arquivo_entrada$Ticker
 
-#Criando códigos para cada empresa e trimestre
+#Criando cÃ³digos para cada empresa e trimestre
 #Configurando os trimestres
 primeiro_codigo = c()
 for (trimestres in trimestres){
@@ -42,5 +42,5 @@ for (i in indice_terceiro_codigo){
   terceiro_codigo = union(terceiro_codigo,trim_codigo)
 }
 
-#Exportação de dados
+#ExportaÃ§Ã£o de dados
 write(terceiro_codigo,file="tickers.txt")
